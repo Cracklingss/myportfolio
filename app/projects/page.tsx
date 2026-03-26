@@ -5,7 +5,7 @@ import { ProjectCard } from "@/components/common/ProjectCard";
 
 export default function Projects() {
   return (
-    <section className="page-section w-full max-w-5xl mx-auto space-y-10 animate-fade-up">
+    <section className="page-section w-full max-w-5xl mx-auto space-y-10 animate-fade-up mb-[150px]">
       {/* TITLE */}
       <div className="space-y-2">
         <h1 className="text-4xl font-extrabold tracking-tight">
