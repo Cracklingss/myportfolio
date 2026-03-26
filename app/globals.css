@@ -120,10 +120,66 @@
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
+
   html {
-    @apply font-sans;
+    @apply font-sans text-slate-900 antialiased;
+  }
+
+  body {
+    background: radial-gradient(
+      circle at 10% 0%,
+      #e0f2fe 0%,
+      #f8fafc 35%,
+      #eef2ff 100%
+    );
+    color: #0f172a;
+    min-height: 100vh;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-bold tracking-tight text-slate-900;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  p {
+    @apply text-base text-slate-700;
+  }
+
+  a {
+    @apply text-indigo-600 hover:text-indigo-700 transition-colors duration-200;
+  }
+
+  .page-section {
+    @apply bg-white/80 border border-slate-200 rounded-3xl shadow-lg p-6 md:p-8 backdrop-blur-sm;
+  }
+
+  .page-section h1,
+  .page-section h2 {
+    @apply text-slate-900;
+  }
+
+  .page-section p {
+    @apply text-slate-700;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 shadow-lg hover:from-blue-500 hover:to-indigo-500 transition-all;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-lg font-medium bg-white/90 text-slate-800 border border-slate-300 hover:bg-white hover:border-indigo-300 transition;
   }
 }
