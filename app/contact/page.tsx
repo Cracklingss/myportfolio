@@ -1,13 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaTwitter,
-  FaTiktok,
-  FaEnvelope,
-} from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTwitter, FaTiktok, FaEnvelope } from "react-icons/fa";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -18,90 +12,59 @@ export default function Contact() {
   };
 
   const socials = [
-    {
-      name: "Facebook",
-      icon: <FaFacebookF />,
-      link: "https://www.facebook.com/itsmecracklings",
-    },
-    {
-      name: "X",
-      icon: <FaTwitter />,
-      link: "https://x.com/CatubayJessie",
-    },
-    {
-      name: "Instagram",
-      icon: <FaInstagram />,
-      link: "https://www.instagram.com/itsmecracklings/",
-    },
-    {
-      name: "Gmail",
-      icon: <FaEnvelope />,
-      link: "mailto:catubayfrancis7@gmail.com",
-    },
-    {
-      name: "TikTok",
-      icon: <FaTiktok />,
-      link: "https://www.tiktok.com/@its_me_cracklings",
-    },
+    { name: "Facebook", icon: <FaFacebookF />, link: "https://www.facebook.com/itsmecracklings" },
+    { name: "X", icon: <FaTwitter />, link: "https://x.com/CatubayJessie" },
+    { name: "Instagram", icon: <FaInstagram />, link: "https://www.instagram.com/itsmecracklings/" },
+    { name: "Gmail", icon: <FaEnvelope />, link: "mailto:catubayfrancis7@gmail.com" },
+    { name: "TikTok", icon: <FaTiktok />, link: "https://www.tiktok.com/@its_me_cracklings" },
   ];
 
   return (
-    <section className="page-section w-full max-w-3xl mx-auto space-y-10 animate-fade-up">
+    <section className="w-full max-w-4xl mx-auto py-20 px-6 space-y-10">
+      
       {/* TITLE */}
-      <div className="space-y-2 text-center">
-        <h1 className="text-4xl font-extrabold tracking-tight">
+      <div className="text-center space-y-3">
+        <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white">
           Contact{" "}
-          <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          <span className="text-black dark:text-white">
             Me
           </span>
         </h1>
-        <p className="text-gray-600">
-          I&apos;d love to hear from you! Send me a message or connect via
-          socials.
+        <p className="text-gray-700 dark:text-gray-300 text-lg">
+          I'd love to hear from you! Send me a message or connect via socials.
         </p>
       </div>
 
-      {/* FORM */}
-      <div className="bg-white shadow-md border border-gray-200 rounded-2xl p-8 animate-zoom-in">
+      {/* FORM CARD */}
+      <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow-lg border border-gray-200 dark:border-gray-700 rounded-3xl p-8 hover:shadow-2xl transition-all">
         {submitted ? (
-          <p className="text-green-600 text-center font-medium text-lg">
+          <p className="text-green-600 dark:text-green-400 text-center font-semibold text-lg">
             Thank you! Your message has been sent.
           </p>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-5">
-            <div>
-              <label className="block text-gray-700 font-medium mb-1">
-                Name:
-              </label>
-              <input
-                type="text"
-                required
-                className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
-              />
-            </div>
-            <div>
-              <label className="block text-gray-700 font-medium mb-1">
-                Email:
-              </label>
-              <input
-                type="email"
-                required
-                className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
-              />
-            </div>
-            <div>
-              <label className="block text-gray-700 font-medium mb-1">
-                Message:
-              </label>
-              <textarea
-                required
-                className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
-                rows={5}
-              ></textarea>
-            </div>
+            {["Name", "Email", "Message"].map((field, i) => (
+              <div key={i}>
+                <label className="block text-gray-700 dark:text-gray-300 font-medium mb-1">{field}:</label>
+                {field === "Message" ? (
+                  <textarea
+                    required
+                    rows={5}
+                    className="w-full border border-gray-300 dark:border-gray-600 bg-white/80 dark:bg-gray-700/80 text-gray-900 dark:text-white rounded-xl p-3 focus:ring-2 focus:ring-cyan-400 focus:outline-none transition"
+                  />
+                ) : (
+                  <input
+                    type={field === "Email" ? "email" : "text"}
+                    required
+                    className="w-full border border-gray-300 dark:border-gray-600 bg-white/80 dark:bg-gray-700/80 text-gray-900 dark:text-white rounded-xl p-3 focus:ring-2 focus:ring-cyan-400 focus:outline-none transition"
+                  />
+                )}
+              </div>
+            ))}
+
             <button
               type="submit"
-              className="w-full bg-indigo-600 text-white font-semibold py-3 rounded-lg shadow hover:bg-indigo-700 transition"
+              className="w-full bg-gray-80 dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-semibold py-3 rounded-xl shadow hover:scale-105 transition cursor-pointer"
             >
               Send Message
             </button>
@@ -110,14 +73,14 @@ export default function Contact() {
       </div>
 
       {/* SOCIALS */}
-      <div className="flex justify-center space-x-6 mt-6 animate-fade-up">
+      <div className="flex justify-center space-x-6 mt-6">
         {socials.map((social, index) => (
           <a
             key={index}
             href={social.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-indigo-600 text-2xl transition"
+            className="text-gray-700 dark:text-gray-300 hover:text-cyan-400 text-3xl transition"
             aria-label={social.name}
           >
             {social.icon}

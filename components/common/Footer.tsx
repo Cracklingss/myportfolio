@@ -2,42 +2,48 @@ import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
 export function Footer() {
   return (
-    <footer className="mt-10 border-t border-indigo-200/60 bg-gradient-to-r from-indigo-800/90 via-slate-900/80 to-blue-800/90 text-white">
-      <div className="max-w-screen-lg mx-auto flex flex-col sm:flex-row justify-between items-center gap-6 px-4 sm:px-6 lg:px-0 py-6">
+    <footer className="mt-24 border-t border-border bg-background">
+      <div className="max-w-screen-lg mx-auto px-6 py-10">
+        
+        <div className="bg-card border border-border rounded-3xl p-6 md:p-8 shadow-lg flex flex-col sm:flex-row justify-between items-center gap-8">
+          
+          {/* LEFT */}
+          <div className="text-center sm:text-left space-y-2">
+            <p className="text-sm font-semibold text-foreground">
+              © {new Date().getFullYear()} Jessie Catubay
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Building modern web applications with Next.js and Node.js.
+            </p>
+          </div>
 
-        {/* COPYRIGHT */}
-        <div className="text-center sm:text-left">
-          <p className="text-sm font-semibold">
-            © {new Date().getFullYear()} Jessie Catubay
-          </p>
-          <p className="text-xs text-slate-200">
-            Building responsive web experiences with Next.js, Node.js, and Tailwind.
-          </p>
-        </div>
+          {/* RIGHT */}
+          <div className="flex flex-col items-center sm:items-end gap-3">
+            <p className="text-sm font-medium text-muted-foreground">
+              Socials
+            </p>
 
-        {/* SOCIAL LINKS */}
-        <div className="flex flex-col sm:flex-row items-center gap-4">
-          <h3 className="text-white text-lg mb-2 sm:mb-0">Socials</h3>
-          <div className="flex gap-4">
-            <a
-              href="https://www.facebook.com/itsmecracklings"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-blue-400 transition-colors"
-            >
-              <FaFacebookF />
-              <span className="text-sm">Jessie Catubay</span>
-            </a>
+            <div className="flex gap-4">
+              <a
+                href="https://www.facebook.com/itsmecracklings"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition"
+              >
+                <FaFacebookF />
+                <span className="text-sm">Facebook</span>
+              </a>
 
-            <a
-              href="https://www.instagram.com/itsmecracklings"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-pink-400 transition-colors"
-            >
-              <FaInstagram />
-              <span className="text-sm">Jessie Catubay</span>
-            </a>
+              <a
+                href="https://www.instagram.com/itsmecracklings"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition"
+              >
+                <FaInstagram />
+                <span className="text-sm">Instagram</span>
+              </a>
+            </div>
           </div>
         </div>
 
